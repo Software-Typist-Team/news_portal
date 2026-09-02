@@ -1,0 +1,17 @@
+{
+  "name": "news-portal",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build:shared": "npm run build -w shared",
+    "dev:backend": "npm run build:shared && npm run dev -w backend",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build -w shared && npm run build -w backend && npm run build -w frontend",
+    "start": "node backend/dist/index.js"
+  },
+  "workspaces": [
+    "backend",
+    "frontend",
+    "shared"
+  ]
+}
